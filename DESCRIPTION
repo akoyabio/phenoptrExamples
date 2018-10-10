@@ -9,8 +9,8 @@ Depends: R (>= 3.1.0)
 License: Zlib | file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
-Remotes: PerkinElmer/phenoptr
+RoxygenNote: 6.1.0
+Remotes: akoyabio/phenoptr
 Suggests: 
     dplyr,
     knitr,
@@ -19,9 +19,9 @@ Suggests:
     rmarkdown,
     tidyverse
 VignetteBuilder: knitr
-URL: https://github.com/PerkinElmer/phenoptrExamples
-BugReports: https://github.com/PerkinElmer/phenoptrExamples/issues
+URL: https://github.com/akoyabio/phenoptrExamples
+BugReports: https://github.com/akoyabio/phenoptrExamples/issues
 Authors@R: c(
     person("Kent", "Johnson", role = c("aut", "cre"),
-           email = "kent.johnson@perkinelmer.com"),
-    person("PerkinElmer, Inc.", role="cph"))
+           email = "kjohnson@akoyabio.com"),
+    person("Akoya Biosciences", role="cph"))

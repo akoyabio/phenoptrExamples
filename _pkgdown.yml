@@ -1,4 +1,4 @@
-url: http://perkinelmer.github.io/phenoptrExamples
+url: http://akoyabio.github.io/phenoptrExamples
 
 template:
   params:
@@ -19,7 +19,7 @@ navbar:
   right:
    - icon: fa-github fa-lg
      text: github
-     href: https://github.com/PerkinElmer/phenoptrExamples
+     href: https://github.com/akoyabio/phenoptrExamples
 
 articles:
   - title: Tutorials

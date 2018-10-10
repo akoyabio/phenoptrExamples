@@ -1,7 +1,10 @@
-urls:
-  reference: http://perkinelmer.github.io/phenoptrExamples/reference
-  article: http://perkinelmer.github.io/phenoptrExamples/articles
+pandoc: 1.19.2.1
+pkgdown: 1.1.0
+pkgdown_sha: ~
 articles:
   aggregation: aggregation.html
   count_touches: count_touches.html
+urls:
+  reference: http://akoyabio.github.io/phenoptrExamples/reference
+  article: http://akoyabio.github.io/phenoptrExamples/articles
 

@@ -8,14 +8,17 @@
 <title>Aggregating data from multiple fields • phenoptrExamples</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Aggregating data from multiple fields">
+<meta property="og:description" content="">
+<meta name="twitter:card" content="summary">
+<!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -24,8 +27,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">phenoptrExamples</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">phenoptrExamples</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.0.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
@@ -52,7 +59,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/PerkinElmer/phenoptrExamples">
+  <a href="https://github.com/akoyabio/phenoptrExamples">
     <span class="fa fa-github fa-lg"></span>
      
     github
@@ -68,17 +75,20 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Aggregating data from multiple fields</h1>
                         <h4 class="author">Kent Johnson</h4>
             
-            <h4 class="date">2017-11-14</h4>
-          </div>
+            <h4 class="date">2018-10-10</h4>
+      
+      <small class="dont-index">Source: <a href="https://github.com/akoyabio/phenoptrExamples/blob/master/vignettes/aggregation.Rmd"><code>vignettes/aggregation.Rmd</code></a></small>
+      <div class="hidden name"><code>aggregation.Rmd</code></div>
+
+    </div>
 
     
     
-<div class="contents">
 <style type="text/css">
 img { 
   border: none;
@@ -150,14 +160,14 @@ paths &lt;-<span class="st"> </span><span class="kw">list_cell_seg_files</span>(
 <span class="st">  </span><span class="kw">summarize</span>(<span class="dt">Mean_PDL1=</span><span class="kw">mean</span>(<span class="st">`</span><span class="dt">Entire Cell PDL1 (Opal 520) Mean</span><span class="st">`</span>))</code></pre></div>
 <pre><code>## # A tibble: 6 x 3
 ## # Groups:   Slide ID [?]
-##       `Slide ID` Phenotype Mean_PDL1
-##            &lt;chr&gt;     &lt;chr&gt;     &lt;dbl&gt;
-## 1 Set12_20-6plex     CD68+  4.594199
-## 2 Set12_20-6plex       CK+  0.820733
-## 3   Set4_1-6plex     CD68+  5.323777
-## 4   Set4_1-6plex       CK+  3.032117
-## 5  Set8_11-6plex     CD68+  4.014701
-## 6  Set8_11-6plex       CK+  1.123245</code></pre>
+##   `Slide ID`     Phenotype Mean_PDL1
+##   &lt;chr&gt;          &lt;chr&gt;         &lt;dbl&gt;
+## 1 Set12_20-6plex CD68+         4.59 
+## 2 Set12_20-6plex CK+           0.821
+## 3 Set4_1-6plex   CD68+         5.32 
+## 4 Set4_1-6plex   CK+           3.03 
+## 5 Set8_11-6plex  CD68+         4.01 
+## 6 Set8_11-6plex  CK+           1.12</code></pre>
 </div>
 <div id="add-distance-columns-to-merged-data" class="section level3">
 <h3 class="hasAnchor">
@@ -183,11 +193,11 @@ csd &lt;-<span class="st"> </span>csd <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">filter</span>(Phenotype<span class="op">==</span><span class="st">'CK+'</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># Only tumor cells</span>
 <span class="st">  </span><span class="kw">summarize</span>(<span class="dt">mean_dist_to_CD68=</span><span class="kw">round</span>(<span class="kw">mean</span>(<span class="st">`</span><span class="dt">Distance to CD68+</span><span class="st">`</span>), <span class="dv">2</span>))</code></pre></div>
 <pre><code>## # A tibble: 3 x 2
-##       `Slide ID` mean_dist_to_CD68
-##            &lt;chr&gt;             &lt;dbl&gt;
-## 1 Set12_20-6plex             56.22
-## 2   Set4_1-6plex             41.79
-## 3  Set8_11-6plex             40.97</code></pre>
+##   `Slide ID`     mean_dist_to_CD68
+##   &lt;chr&gt;                      &lt;dbl&gt;
+## 1 Set12_20-6plex              56.2
+## 2 Set4_1-6plex                41.8
+## 3 Set8_11-6plex               41.0</code></pre>
 </div>
 <div id="compute-count_within-for-each-field-in-merged-data" class="section level3">
 <h3 class="hasAnchor">
@@ -200,17 +210,28 @@ csd &lt;-<span class="st"> </span>csd <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">do</span>(<span class="kw">count_within</span>(., <span class="dt">from=</span><span class="st">'CK+'</span>, <span class="dt">to=</span><span class="st">'CD68+'</span>, <span class="dt">radius=</span><span class="dv">15</span>))</code></pre></div>
 <pre><code>## # A tibble: 9 x 7
 ## # Groups:   Slide ID, Sample Name [9]
-##       `Slide ID`                    `Sample Name` radius from_count to_count from_with within_mean
-##            &lt;chr&gt;                            &lt;chr&gt;  &lt;dbl&gt;      &lt;int&gt;    &lt;int&gt;     &lt;int&gt;       &lt;dbl&gt;
-## 1 Set12_20-6plex Set12_20-6plex_[14146,53503].im3     15       2323      557       273  0.16874731
-## 2 Set12_20-6plex Set12_20-6plex_[15491,58698].im3     15       2367       87       104  0.05027461
-## 3 Set12_20-6plex Set12_20-6plex_[17241,54367].im3     15       3799      344       166  0.05975257
-## 4   Set4_1-6plex   Set4_1-6plex_[11472,51360].im3     15       1731      599       387  0.30791450
-## 5   Set4_1-6plex   Set4_1-6plex_[15206,60541].im3     15       1434      112        67  0.05299861
-## 6   Set4_1-6plex   Set4_1-6plex_[16142,55840].im3     15       2257      417       253  0.15817457
-## 7  Set8_11-6plex  Set8_11-6plex_[13394,50883].im3     15       2491      590       261  0.16057808
-## 8  Set8_11-6plex  Set8_11-6plex_[14996,59221].im3     15       1100      199        90  0.09181818
-## 9  Set8_11-6plex  Set8_11-6plex_[17130,56449].im3     15       1861      469       181  0.13379903</code></pre>
+##   `Slide ID`     `Sample Name`                    radius from_count
+##   &lt;chr&gt;          &lt;chr&gt;                             &lt;dbl&gt;      &lt;int&gt;
+## 1 Set12_20-6plex Set12_20-6plex_[14146,53503].im3     15       2323
+## 2 Set12_20-6plex Set12_20-6plex_[15491,58698].im3     15       2367
+## 3 Set12_20-6plex Set12_20-6plex_[17241,54367].im3     15       3799
+## 4 Set4_1-6plex   Set4_1-6plex_[11472,51360].im3       15       1731
+## 5 Set4_1-6plex   Set4_1-6plex_[15206,60541].im3       15       1434
+## 6 Set4_1-6plex   Set4_1-6plex_[16142,55840].im3       15       2257
+## 7 Set8_11-6plex  Set8_11-6plex_[13394,50883].im3      15       2491
+## 8 Set8_11-6plex  Set8_11-6plex_[14996,59221].im3      15       1100
+## 9 Set8_11-6plex  Set8_11-6plex_[17130,56449].im3      15       1861
+##   to_count from_with within_mean
+##      &lt;int&gt;     &lt;int&gt;       &lt;dbl&gt;
+## 1      557       273      0.169 
+## 2       87       104      0.0503
+## 3      344       166      0.0598
+## 4      599       387      0.308 
+## 5      112        67      0.0530
+## 6      417       253      0.158 
+## 7      590       261      0.161 
+## 8      199        90      0.0918
+## 9      469       181      0.134</code></pre>
 <hr>
 </div>
 </div>
@@ -255,21 +276,34 @@ counts &lt;-<span class="st"> </span><span class="kw">count_within_batch</span>(
 <span class="st">  </span>ungroup <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span>within)
 counts_per_sample</code></pre></div>
 <pre><code>## # A tibble: 12 x 8
-##          slide_id  from    to radius from_count to_count from_with within_mean
-##             &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;int&gt;      &lt;int&gt;    &lt;int&gt;     &lt;int&gt;       &lt;dbl&gt;
-##  1 Set12_20-6plex   CK+ CD68+     10       8489      988       200  0.08715678
-##  2 Set12_20-6plex   CK+ CD68+     25       8489      988      1482  1.02520237
-##  3 Set12_20-6plex   CK+  CD8+     10       8489      303       140  0.05904267
-##  4 Set12_20-6plex   CK+  CD8+     25       8489      303      1062  0.49804619
-##  5   Set4_1-6plex   CK+ CD68+     10       5422     1128       288  0.17293326
-##  6   Set4_1-6plex   CK+ CD68+     25       5422     1128      1775  1.84491670
-##  7   Set4_1-6plex   CK+  CD8+     10       5422     1074       344  0.23853299
-##  8   Set4_1-6plex   CK+  CD8+     25       5422     1074      2003  2.20967287
-##  9  Set8_11-6plex   CK+ CD68+     10       5452     1258       170  0.09337894
-## 10  Set8_11-6plex   CK+ CD68+     25       5452     1258      1484  1.51271404
-## 11  Set8_11-6plex   CK+  CD8+     10       5452      514       123  0.09802481
-## 12  Set8_11-6plex   CK+  CD8+     25       5452      514       832  0.87058624</code></pre>
-</div>
+##    slide_id       from  to    radius from_count to_count from_with
+##    &lt;chr&gt;          &lt;chr&gt; &lt;chr&gt;  &lt;int&gt;      &lt;int&gt;    &lt;int&gt;     &lt;int&gt;
+##  1 Set12_20-6plex CK+   CD68+     10       8489      988       200
+##  2 Set12_20-6plex CK+   CD68+     25       8489      988      1482
+##  3 Set12_20-6plex CK+   CD8+      10       8489      303       140
+##  4 Set12_20-6plex CK+   CD8+      25       8489      303      1062
+##  5 Set4_1-6plex   CK+   CD68+     10       5422     1128       288
+##  6 Set4_1-6plex   CK+   CD68+     25       5422     1128      1775
+##  7 Set4_1-6plex   CK+   CD8+      10       5422     1074       344
+##  8 Set4_1-6plex   CK+   CD8+      25       5422     1074      2003
+##  9 Set8_11-6plex  CK+   CD68+     10       5452     1258       170
+## 10 Set8_11-6plex  CK+   CD68+     25       5452     1258      1484
+## 11 Set8_11-6plex  CK+   CD8+      10       5452      514       123
+## 12 Set8_11-6plex  CK+   CD8+      25       5452      514       832
+##    within_mean
+##          &lt;dbl&gt;
+##  1      0.0872
+##  2      1.03  
+##  3      0.0590
+##  4      0.498 
+##  5      0.173 
+##  6      1.84  
+##  7      0.239 
+##  8      2.21  
+##  9      0.0934
+## 10      1.51  
+## 11      0.0980
+## 12      0.871</code></pre>
 </div>
 </div>
   </div>
@@ -294,11 +328,13 @@ counts_per_sample</code></pre></div>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
 </div>
+
+  
 
   </body>
 </html>

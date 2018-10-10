@@ -8,14 +8,17 @@
 <title>Aggregating touch counts • phenoptrExamples</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Aggregating touch counts">
+<meta property="og:description" content="">
+<meta name="twitter:card" content="summary">
+<!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -24,20 +27,24 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">phenoptrExamples</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">phenoptrExamples</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.0.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
-     
+
   </a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
@@ -52,9 +59,9 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/PerkinElmer/phenoptrExamples">
+  <a href="https://github.com/akoyabio/phenoptrExamples">
     <span class="fa fa-github fa-lg"></span>
-     
+
     github
   </a>
 </li>
@@ -66,20 +73,23 @@
 </div>
 <!--/.navbar -->
 
-      
+
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Aggregating touch counts</h1>
                         <h4 class="author">Kent Johnson</h4>
-            
-            <h4 class="date">2017-11-14</h4>
-          </div>
 
-    
-    
-<div class="contents">
-<p>The <code><a href="http://www.rdocumentation.org/packages/phenoptr/topics/count_touching_cells">phenoptr::count_touching_cells</a></code> function finds, counts and visualizes touching cells of multiple phenotypes in a single field.</p>
+            <h4 class="date">2018-10-10</h4>
+
+      <small class="dont-index">Source: <a href="https://github.com/akoyabio/phenoptrExamples/blob/master/vignettes/count_touches.Rmd"><code>vignettes/count_touches.Rmd</code></a></small>
+      <div class="hidden name"><code>count_touches.Rmd</code></div>
+
+    </div>
+
+
+
+<p>The <code><a href="http://akoyabio.github.io/phenoptr/reference/count_touching_cells.html">phenoptr::count_touching_cells</a></code> function finds, counts and visualizes touching cells of multiple phenotypes in a single field.</p>
 <p>This vignette gives an example of counting touches in multiple fields and aggregating across slides. This vignette does not create visualizations of the touching cells; the comments show how to change this.</p>
 <hr>
 <div id="count-touching-cells-in-multiple-fields" class="section level2">
@@ -135,15 +145,22 @@ touch_counts &lt;-<span class="st"> </span>purrr<span class="op">::</span><span 
 <span class="st">  </span><span class="kw">summarize_at</span>(<span class="kw">vars</span>(total1<span class="op">:</span>touch_pairs), sum)</code></pre></div>
 <pre><code>## # A tibble: 6 x 8
 ## # Groups:   slide_id, phenotype1 [?]
-##         slide_id phenotype1 phenotype2 total1 total2 p1_touch_p2 p2_touch_p1 touch_pairs
-##            &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;  &lt;int&gt;  &lt;int&gt;       &lt;int&gt;       &lt;int&gt;       &lt;int&gt;
-## 1 Set12_20-6plex       CD8+      CD68+    303    988          49          56          61
-## 2 Set12_20-6plex       CD8+        CK+    303   8489         122         265         287
-## 3   Set4_1-6plex       CD8+      CD68+   1074   1128         198         205         251
-## 4   Set4_1-6plex       CD8+        CK+   1074   5422         378         596         724
-## 5  Set8_11-6plex       CD8+      CD68+    514   1258         108         124         136
-## 6  Set8_11-6plex       CD8+        CK+    514   5452         134         228         250</code></pre>
-</div>
+##   slide_id       phenotype1 phenotype2 total1 total2 p1_touch_p2
+##   &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;       &lt;int&gt;  &lt;int&gt;       &lt;int&gt;
+## 1 Set12_20-6plex CD8+       CD68+         303    988          49
+## 2 Set12_20-6plex CD8+       CK+           303   8489         122
+## 3 Set4_1-6plex   CD8+       CD68+        1074   1128         198
+## 4 Set4_1-6plex   CD8+       CK+          1074   5422         378
+## 5 Set8_11-6plex  CD8+       CD68+         514   1258         108
+## 6 Set8_11-6plex  CD8+       CK+           514   5452         134
+##   p2_touch_p1 touch_pairs
+##         &lt;int&gt;       &lt;int&gt;
+## 1          56          61
+## 2         265         287
+## 3         205         251
+## 4         596         724
+## 5         124         136
+## 6         228         250</code></pre>
 </div>
   </div>
 
@@ -166,11 +183,13 @@ touch_counts &lt;-<span class="st"> </span>purrr<span class="op">::</span><span 
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
 </div>
+
+
 
   </body>
 </html>

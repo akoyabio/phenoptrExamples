@@ -9,7 +9,7 @@
 \code{phenoptrExamples} contains data sets and example code which demonstrate
 the use of the \code{phenoptr} package. \code{phenoptr} contains functions that make
 it easier to read and analyze data tables
-and images created by PerkinElmer's inForm software.
+and images created by Akoya Biosciences' inForm software.
 }
 \details{
 \code{phenoptrExamples} contains selected inForm output from nine images taken
@@ -18,27 +18,28 @@ files included for these samples, use the command
 \code{list.files(system.file("extdata", "samples", package = "phenoptrExamples"))}.
 
 For details on the file contents, see the
-\href{https://perkinelmer.github.io/phenoptrExamples/}{package documentation}
+\href{https://akoyabio.github.io/phenoptrExamples/}{package documentation}
 online.
 
-\code{phenoptr} and \code{phenoptrExamples} are part of the PerkinElmer Phenoptics family of
+\code{phenoptr} and \code{phenoptrExamples} are part of the Akoya Biosciences
+Phenoptics family of
 Quantitative Pathology Research Solutions. For more information visit the
-Phenoptics \href{http://www.perkinelmer.com/cancer-immunology/index.html}{homepage}.
+Phenoptics \href{http://www.perkinelmer.com/cancer-immunology/index.html}{home page}.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/PerkinElmer/phenoptrExamples}
-  \item Report bugs at \url{https://github.com/PerkinElmer/phenoptrExamples/issues}
+  \item \url{https://github.com/akoyabio/phenoptrExamples}
+  \item Report bugs at \url{https://github.com/akoyabio/phenoptrExamples/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: Kent Johnson \email{kent.johnson@perkinelmer.com}
+\strong{Maintainer}: Kent Johnson \email{kjohnson@akoyabio.com}
 
 Other contributors:
 \itemize{
-  \item PerkinElmer, Inc. [copyright holder]
+  \item Akoya Biosciences [copyright holder]
 }
 
 }

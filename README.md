@@ -10,20 +10,20 @@ table {
 </style>
 
 `phenoptrExamples` contains 
-[example code](https://perkinelmer.github.io/phenoptrExamples/articles/index.html) 
+[example code](https://akoyabio.github.io/phenoptrExamples/articles/index.html) 
 and extended data sets demonstrating
-the use of the [phenoptr](http://perkinelmer.github.io/phenoptr) package to
+the use of the [phenoptr](http://akoyabio.github.io/phenoptr) package to
 analyze data from multiple fields. 
 
 <div class="panel panel-default"><div class="panel-body">
 For introductory examples, please see
 the
-<a href="https://perkinelmer.github.io/phenoptr/articles/index.html">Tutorials</a>
+<a href="https://akoyabio.github.io/phenoptr/articles/index.html">Tutorials</a>
 included in the <code>phenoptr</code> documentation.</div></div>
 
 `phenoptr` contains functions that make it easier to read and analyze data tables
-and images created by PerkinElmer's inForm<sup>&reg;</sup> software.
-`phenoptr` and `phenoptrExamples` are part of the PerkinElmer Phenoptics&trade;
+and images created by Akoya Biosciences' inForm<sup>&reg;</sup> software.
+`phenoptr` and `phenoptrExamples` are part of the Akoya Biosciences Phenoptics&trade;
 family of
 Quantitative Pathology Research Solutions. For more information
 visit the Phenoptics&trade;
@@ -38,7 +38,7 @@ The entire package contains over 150 MB of data files.
 
 ```
 # install.packages("devtools")
-devtools::install_github("PerkinElmer/phenoptrExamples", build_vignettes=TRUE)
+devtools::install_github("akoyabio/phenoptrExamples", build_vignettes=TRUE)
 ```
 
 ----
@@ -47,9 +47,9 @@ devtools::install_github("PerkinElmer/phenoptrExamples", build_vignettes=TRUE)
 
 The Tutorials demonstrate aggregation of data across multiple fields and slides.
 
-- [Aggregating data from multiple fields](https://perkinelmer.github.io/phenoptrExamples/articles/aggregation.html)
+- [Aggregating data from multiple fields](https://akoyabio.github.io/phenoptrExamples/articles/aggregation.html)
 demonstrates reading and processing cell seg data from multiple fields and samples.
-- [Aggregating touch counts](https://perkinelmer.github.io/phenoptrExamples/articles/count_touches.html) shows how to count touching cells across multiple fields and aggregate
+- [Aggregating touch counts](https://akoyabio.github.io/phenoptrExamples/articles/count_touches.html) shows how to count touching cells across multiple fields and aggregate
 the results per sample.
 
 ### Sample data
@@ -99,6 +99,6 @@ Opal690 | CK      | Cyan      | Cyan
 ### Full documentation
 
 See the
-[Tutorials](https://perkinelmer.github.io/phenoptrExamples/articles/index.html)
+[Tutorials](https://akoyabio.github.io/phenoptrExamples/articles/index.html)
 and the 
-[full phenoptr documentation](http://perkinelmer.github.io/phenoptr).
+[full phenoptr documentation](http://akoyabio.github.io/phenoptr).
