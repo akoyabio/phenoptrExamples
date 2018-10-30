@@ -1,7 +1,7 @@
 Package: phenoptrExamples
 Type: Package
 Title: Extended examples for use with phenoptr
-Version: 0.1.0.9000
+Version: 0.1.1
 Description: Example code and extended data sets demonstrating
     the use of the phenoptr package to
     analyze data from multiple fields and samples.

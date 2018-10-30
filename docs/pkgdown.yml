@@ -1,6 +1,6 @@
 pandoc: 1.19.2.1
-pkgdown: 1.1.0
-pkgdown_sha: ~
+pkgdown: 1.1.0.9000
+pkgdown_sha: 3b3188bfbbd8cc42daa3218f3884b85fd5122372
 articles:
   aggregation: aggregation.html
   count_touches: count_touches.html

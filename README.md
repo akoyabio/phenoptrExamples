@@ -25,9 +25,7 @@ included in the <code>phenoptr</code> documentation.</div></div>
 and images created by Akoya Biosciences' inForm<sup>&reg;</sup> software.
 `phenoptr` and `phenoptrExamples` are part of the Akoya Biosciences Phenoptics&trade;
 family of
-Quantitative Pathology Research Solutions. For more information
-visit the Phenoptics&trade;
-[home page](http://www.perkinelmer.com/cancer|immunology/index.html).
+Quantitative Pathology Research Solutions.
 
 ----
 
